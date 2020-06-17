@@ -14,7 +14,7 @@ class Person:
         self.friends_list = friends_list
         self.interest_list = interest_list
 
-# IMPROVEMENTS: can read directly from txt file
+# optional: allow to read directly from txt file
 def init():
     network = []
     for person in smallnetwork:
@@ -71,17 +71,7 @@ def list_to_string(given_list):
     for elem in given_list:
         return_list.append(elem.name)
     return return_list
-'''
-def sort_by_popularity(given_list):
-    return_list = []
 
-    for i in len(given_list)-1:
-        elem = given_list[i]
-        next_elem = given_list[i+1]
-        if len(elem.friends_list) < len(next_elem.friends_list):
-            given_list[]
-
-'''
 # takes a name and returns name of person with most mutual friends
 # return: string, params: string
 def recommend_friend_for(name):
@@ -170,13 +160,15 @@ def get_person(name):
         if person.name == name:
             return person
 
+# main method
 def main():
     get_names()
+    # testing
     print(get_most_popular())
     print(get_least_popular())
     print(">>>>>>>>>>>>", recommend_friend_for("Felipa"))
     print(">>>>>>>>>>>>", recommend_by_interest("Felipa"))
     print(target_ad("gaming"))
 
-network = init()
+network = init()    # global constant
 main()
