@@ -163,11 +163,14 @@ def get_person(name):
 def main():
     get_names()
     # testing
-    print(get_most_popular())
-    print(get_least_popular())
-    print(">>>>>>>>>>>>", recommend_friend_for("Felipa"))
-    print(">>>>>>>>>>>>", recommend_by_interest("Felipa"))
-    print(target_ad("gaming"))
+    print("Most popular person:", get_most_popular())
+    print("Least popular person:", get_least_popular())
+    x = input("Recommend friend for? (by mutuals): ")
+    print("Friend for", x, ":", recommend_friend_for(x))
+    y = input("Recommend friend for? (by mutual interests): ")
+    print("Friend for", y, ":" recommend_by_interest(y))
+    z = ("Target advertisement for which interest? ")
+    print(target_ad(z))
 
 network = init()    # global constant, list of Person objects
 main()
